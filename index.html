@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTNOY - Leave Demons Behind</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #0b0b0b;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 24px;
+        }
+        .container {
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        .album-art-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1/1;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.8);
+            margin-bottom: 20px;
+            border: 1px solid #222222;
+        }
+        .album-art {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .placeholder-art {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1c1c1c, #080808);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #777777;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        /* Countdown Styles */
+        .countdown-box {
+            background: #161616;
+            border: 1px solid #2a2a2a;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 20px;
+        }
+        .countdown-label {
+            font-size: 0.75rem;
+            color: #a0a0a0;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 6px;
+        }
+        .countdown-timer {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #ffffff;
+            font-variant-numeric: tabular-nums;
+        }
+        /* Audio Player Styles */
+        .audio-player-box {
+            width: 100%;
+            margin-bottom: 24px;
+            background: #161616;
+            padding: 12px 16px;
+            border-radius: 8px;
+            border: 1px solid #2a2a2a;
+        }
+        .audio-label {
+            font-size: 0.75rem;
+            color: #a0a0a0;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        audio {
+            width: 100%;
+            height: 36px;
+            accent-color: #ffffff;
+        }
+        h1 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            letter-spacing: -0.5px;
+        }
+        .artist {
+            font-size: 1rem;
+            color: #a0a0a0;
+            margin-bottom: 28px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+        .links-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #161616;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 16px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: 1px solid #2a2a2a;
+            transition: all 0.2s ease;
+        }
+        .btn:hover {
+            background-color: #222222;
+            border-color: #555555;
+            transform: translateY(-2px);
+        }
+        .btn span {
+            letter-spacing: 0.3px;
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 0.75rem;
+            color: #555555;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Album Art -->
+        <div class="album-art-wrapper">
+            <img src="artwork.jpg" alt="Leave Demons Behind Album Cover" class="album-art" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="placeholder-art" style="display:none;">
+                <span>PORTNOY</span>
+            </div>
+        </div>
+
+        <!-- Live Countdown Timer -->
+        <div class="countdown-box">
+            <div class="countdown-label" id="timer-label">Release Countdown</div>
+            <div class="countdown-timer" id="countdown">Loading...</div>
+        </div>
+
+        <!-- Audio Preview Player -->
+        <div class="audio-player-box">
+            <div class="audio-label">▶ Preview: Leave Demons Behind</div>
+            <audio controls preload="none">
+                <source src="preview.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        
+        <h1>Leave Demons Behind</h1>
+        <div class="artist">PORTNOY</div>
+
+        <div class="links-list">
+            <a href="YOUR_SPOTIFY_LINK_HERE" class="btn" target="_blank">
+                <span>Listen on Spotify</span>
+            </a>
+            <a href="YOUR_APPLE_MUSIC_LINK_HERE" class="btn" target="_blank">
+                <span>Listen on Apple Music</span>
+            </a>
+            <a href="YOUR_YOUTUBE_MUSIC_LINK_HERE" class="btn" target="_blank">
+                <span>Listen on YouTube Music</span>
+            </a>
+            <a href="YOUR_AMAZON_MUSIC_LINK_HERE" class="btn" target="_blank">
+                <span>Listen on Amazon Music</span>
+            </a>
+            <a href="YOUR_YOUTUBE_LINK_HERE" class="btn" target="_blank">
+                <span>Watch on YouTube</span>
+            </a>
+        </div>
+
+        <footer>PORTNOY &copy; 2026</footer>
+    </div>
+
+    <script>
+        // Set release date to November 20, 2026 at 00:00:00
+        const releaseDate = new Date("November 20, 2026 00:00:00").getTime();
+
+        const timerUpdate = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = releaseDate - now;
+
+            if (distance < 0) {
+                clearInterval(timerUpdate);
+                document.getElementById("timer-label").innerText = "Status";
+                document.getElementById("countdown").innerText = "OUT NOW ACROSS ALL PLATFORMS";
+            } else {
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById("countdown").innerText = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
